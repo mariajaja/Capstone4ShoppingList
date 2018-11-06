@@ -6,36 +6,45 @@
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-	<div>
-	   <h2>Mariah's Cafe</h2>
-	   
-	   <div>
-	       Chocolate Cherry Milkshake $25
-	       <button id="milkshakeAdd">Add</button>
-	   </div>
-	   
-       <div>
-            Organic Low-Fat American Cheese $10
-           <button id="cheeseAdd">Add</button>
-       </div>
-	
-	   <div>
-	       Egg-less Hard-Boiled Eggs $5
-	       <button id="eggsAdd">Add</button>
-	   </div>
-	   
-	   <div>
-	       Tamales fresh from the can $30
-	       <button id="tamalesAdd">Add</button>
-	   </div>
-	   
-	   <div>
-	       <button id="checkOut">Check Out!</button>
-	   </div>	
-	</div>
-
-    <div id="totalBox">
-        Total Box
+    <h2>Mariah's Cafe</h2>
+	<table id="menuList" style="">
+	   <tr>
+	       <th id="iteamHead">Menu Item<th>
+	       <th id="priceHead">Price</th>
+	       <th></th>
+	   </tr>
+	   <tr class="menuItem">
+	       <td>Chocolate Cherry Milkshake</td>
+	       <td>$25</td>
+	       <td><button class="menuButton" id="milkshakeAdd">Add</button></td>
+	   </tr>
+       <tr class="menuItem">
+           <td>Organic Low-Fat American Cheese</td>
+           <td>$10</td>
+           <td><button class="menuButton" id="cheeseAdd">Add</button></td>
+       </tr>
+	   <tr class="menuItem">
+	       <td>Egg-less Hard-Boiled Eggs</td>
+	       <td>$5</td>
+	       <td><button class="menuButton" id="eggsAdd">Add</button></td>
+	   </tr>
+	   <tr class="menuItem">
+	       <td>Tamales fresh from the can</td>
+	       <td>$30</td>
+	       <td><button class="menuButton" id="tamalesAdd">Add</button><td>
+	   </tr>	
+	   <tr>
+           <td><button id="checkOut">Check Out!</button></td>
+       </tr>
+	</table>
+    <div id="totalBox" style="display:none;" >
+        <table id="totalTable">
+            <tr>    
+               <th>Item</th>
+               <th>Price</th>
+            </tr>
+        </table>
+        <button id="shopAgain">Shop again?</button>
     </div>
 	<script src= "script.js"></script>
 </body>

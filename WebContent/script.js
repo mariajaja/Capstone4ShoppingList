@@ -3,6 +3,9 @@ var cheeseAdd = document.getElementById("cheeseAdd");
 var eggsAdd = document.getElementById("eggsAdd");
 var tamalesAdd = document.getElementById("tamalesAdd");
 var checkOut = document.getElementById("checkOut");
+var totalTable = document.getElementById("totalTable");
+var menuList = document.getElementById("menuList");
+var shopAgain = document.getElementById("shopAgain");
 
 var orderNameArray = [];
 var orderPriceArray = [];
@@ -29,10 +32,20 @@ function addItemToArray(name, price) {
 }
 
 checkOut.onclick = function() {
-	for (var i = 0; i < orderNameArray.length; i++) {
-		console.log("Item: " + orderNameArray[i] + " Price: $" + orderPriceArray[i]);
+	if (orderNameArray.length < 1) {
+		alert("Sorry! Please add something to your order!")
+	} else {
+		showTotalBox();
+		for (var i = 0; i < orderNameArray.length; i++) {
+			totalTable.innerHTML += "<tr><td>" + orderNameArray[i] + "</td><td>$" + orderPriceArray[i] + "</td></tr>";
+		}
+		totalTable.innerHTML += "<br>" + calcTotal();
+		menuList.style.display = "none";
 	}
-	calcTotal();
+}
+
+shopAgain.onclick = function() {
+	showMenuAgain();
 }
 
 function calcTotal() {
@@ -40,6 +53,17 @@ function calcTotal() {
 	for (var i = 0; i < orderPriceArray.length; i++) {
 		total += parseInt(orderPriceArray[i], 10);
 	}
+	return "<b>Total:</b> $" + total;
+}
 
-	console.log("Total: $" + total);
+function showTotalBox() {
+	document.getElementById("totalBox").style.display = "block";
+}
+
+function showMenuAgain() {
+	orderNameArray = [];
+	orderPriceArray = [];
+	totalTable.innerHTML = "<tr><th>Item</th><th>Price</th></tr><br>";
+	document.getElementById("menuList").style.display = "block";
+	totalBox.style.display = "none";
 }

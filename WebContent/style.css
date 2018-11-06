@@ -1,3 +1,30 @@
+#totalTable {
+	width: 350px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 8px;
+    text-align: left;
+    padding: 5px 8px;
+}
+
 #totalBox {
-	
+	padding-top: 15px;
+	align:center;
+}
+
+#checkOut {
+	margin-top: 15px;
+}
+
+#menuList {
+	text-align:left;
+	width: 350px;
+}
+
+.menuItem {
+	margin-top: 15px;
+}
+
+.menuButton {
+	margin-left: 15px;
 }
